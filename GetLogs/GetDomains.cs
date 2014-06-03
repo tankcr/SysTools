@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 
-namespace GetLogs
+namespace SysTools
 {
     public class Domains
     {

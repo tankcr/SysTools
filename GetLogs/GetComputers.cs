@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.DirectoryServices; 
+using System.DirectoryServices;
 
-namespace GetLogs
+namespace SysTools
 {
     public class Computers
     {

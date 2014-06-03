@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-using AxMSTSCLib;
-
-namespace GetLogs
+namespace SysTools
 {
     public partial class Form1 : Form
     {
@@ -111,6 +109,11 @@ namespace GetLogs
             string session = (listBox1.Text);
             //term.Show();
             Process.Start("mstsc.exe", string.Format("/v:{0}", session));
+        }
+
+        private void cmdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            remoteApp.GetApp("cmd.exe", listBox1.Text);
         }
     }
 }
