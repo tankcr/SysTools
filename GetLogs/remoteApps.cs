@@ -43,7 +43,7 @@ namespace SysTools
             var wmiProcess = new ManagementClass(wmiScope, new ManagementPath("Win32_Process"), new ObjectGetOptions());
             wmiProcess.InvokeMethod("Create", processToRun);
 */
-            Term term = new Term();
+            Term term = new Term(appname, computername);
             term.Show();
             return appname;
         }

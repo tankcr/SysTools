@@ -41,6 +41,8 @@
             this.item1TestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remoteLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -72,6 +74,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(190, 199);
             this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDown);
             // 
@@ -132,9 +135,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.item1TestToolStripMenuItem,
-            this.remoteAppsToolStripMenuItem});
+            this.remoteAppsToolStripMenuItem,
+            this.remoteLogsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // item1TestToolStripMenuItem
@@ -159,6 +163,21 @@
             this.cmdToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.cmdToolStripMenuItem.Text = "cmd";
             this.cmdToolStripMenuItem.Click += new System.EventHandler(this.cmdToolStripMenuItem_Click);
+            // 
+            // remoteLogsToolStripMenuItem
+            // 
+            this.remoteLogsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logTypesToolStripMenuItem});
+            this.remoteLogsToolStripMenuItem.Name = "remoteLogsToolStripMenuItem";
+            this.remoteLogsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.remoteLogsToolStripMenuItem.Text = "Remote Logs";
+            this.remoteLogsToolStripMenuItem.MouseLeave += new System.EventHandler(this.remoteLogsToolStripMenuItem_MouseLeave);
+            this.remoteLogsToolStripMenuItem.MouseHover += new System.EventHandler(this.remoteLogsToolStripMenuItem_MouseHover);
+            // 
+            // logTypesToolStripMenuItem
+            // 
+            this.logTypesToolStripMenuItem.Name = "logTypesToolStripMenuItem";
+            this.logTypesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             // 
             // tabControl1
             // 
@@ -231,6 +250,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ToolStripMenuItem remoteLogsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logTypesToolStripMenuItem;
     }
 }
 

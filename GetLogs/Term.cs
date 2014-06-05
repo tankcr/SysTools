@@ -18,13 +18,16 @@ namespace SysTools
         Process cmdProcess;
         StreamWriter cmdStreamWriter;
 
-        public Term()
+        public Term(string appname, string computername)
         {
+            //do stuff here
+            Term.ActiveForm.Text = computername;
             InitializeComponent();
         }
         
         private void Term_Load(object sender, EventArgs e)
         {
+
             cmdOutput = new StringBuilder("");
             cmdProcess = new Process();
             RemoteApps app = new RemoteApps();
@@ -34,7 +37,7 @@ namespace SysTools
             cmdProcess.StartInfo.UseShellExecute = false;
             cmdProcess.StartInfo.RedirectStandardOutput = true;
             cmdProcess.StartInfo.RedirectStandardError = true;
-            cmdProcess.StartInfo.Arguments = @"\\ computername cmd.exe";
+            cmdProcess.StartInfo.Arguments = @"\\ " + Term.ActiveForm.Text + "cmd.exe";
 
 
             cmdProcess.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler);

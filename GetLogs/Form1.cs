@@ -114,6 +114,47 @@ namespace SysTools
         private void cmdToolStripMenuItem_Click(object sender, EventArgs e)
         {
             remoteApp.GetApp("cmd.exe", listBox1.Text);
+
         }
+        private void BuildLogItems()
+        {
+            List<Logs> logList = GetLogs.GetLogNames(listBox1.Text);
+            ToolStripMenuItem[] logtypes = new ToolStripMenuItem[logList.Count];
+            for (int i = 0; i < logtypes.Length; i++)
+            { 
+                logtypes[i] = new ToolStripMenuItem();
+                logtypes[i].Name = logList[i].LogName;
+                logtypes[i].Tag = "specialDataHere";
+                logtypes[i].Text = logtypes[i].Name;
+                logtypes[i].Click += new EventHandler(logtypeMenuItemClickHandler);
+            }
+            remoteLogsToolStripMenuItem.DropDownItems.AddRange(logtypes);
+        }
+        private void logtypeMenuItemClickHandler(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = (ToolStripMenuItem)sender;
+            EventLog logs =  GetLogs.GetEventLogs(clickedItem.Name, listBox1.Text);
+
+            LogViewer logviewer = new LogViewer(logs);
+
+            // Take some action based on the data in clickedItem
+        }
+
+        private void remoteLogsToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void remoteLogsToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            //remoteLogsToolStripMenuItem.DropDownItems.Clear(); 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            remoteLogsToolStripMenuItem.DropDownItems.Clear();
+            BuildLogItems();
+        }
+
     }
 }

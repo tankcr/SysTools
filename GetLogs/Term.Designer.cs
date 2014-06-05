@@ -33,11 +33,12 @@
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnShowOutput = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
+            this.textBox1.Location = new System.Drawing.Point(12, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(594, 20);
             this.textBox1.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             // btnExecute
             // 
-            this.btnExecute.Location = new System.Drawing.Point(12, 39);
+            this.btnExecute.Location = new System.Drawing.Point(12, 76);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Size = new System.Drawing.Size(75, 23);
             this.btnExecute.TabIndex = 2;
@@ -61,7 +62,7 @@
             // 
             // btnShowOutput
             // 
-            this.btnShowOutput.Location = new System.Drawing.Point(107, 38);
+            this.btnShowOutput.Location = new System.Drawing.Point(93, 76);
             this.btnShowOutput.Name = "btnShowOutput";
             this.btnShowOutput.Size = new System.Drawing.Size(75, 23);
             this.btnShowOutput.TabIndex = 3;
@@ -71,7 +72,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(200, 40);
+            this.btnQuit.Location = new System.Drawing.Point(174, 76);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 4;
@@ -79,11 +80,23 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
             // Term
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 475);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnShowOutput);
             this.Controls.Add(this.btnExecute);
@@ -104,6 +117,7 @@
         private System.Windows.Forms.Button btnExecute;
         private System.Windows.Forms.Button btnShowOutput;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Label label1;
 
     }
 }
